@@ -13,7 +13,7 @@
         html,body{height:100%}
         body{
             margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-            background:linear-gradient(180deg,#071226 0%, #071226 60%, #04101a 100%); color:#e6eef6;
+            background:linear-gradient(180deg,#071226 10%, #071226 60%, #04101a 100%); color:#e6eef6;
             -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
         }
 
@@ -47,8 +47,8 @@
             display:block;
         }
         nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px; align-items:center;}
-        nav a{color:var(--muted); text-decoration:none; padding:6px 8px; border-radius:8px; font-weight:600;}
-        nav a:hover{color:#cfeff4; background:var(--glass);}
+        nav a{color:var(--muted); text-decoration:none; padding:6px 8px; border-radius:10px; font-weight:700;}
+        nav a:hover{color:#95dee9; background:var(--glass);}
         .cta{background:linear-gradient(90deg,var(--accent),#7dd3fc); color:#022; padding:8px 12px; border-radius:8px; font-weight:700}
         .mobile-toggle{display:none; background:transparent; border:0; color:var(--muted); font-size:20px}
 
@@ -111,6 +111,21 @@
             transition:opacity .28s ease, transform .28s ease;
             pointer-events:none;
         }
+
+        /* make caption always visible when you want text permanently on the image */
+        .work .caption.always{
+            opacity:1;
+            transform:translateY(0);
+            pointer-events:auto;
+            background:linear-gradient(90deg, rgba(0,0,0,0.36), rgba(0,0,0,0.12));
+            padding:8px 12px;
+            display:inline-block;
+            border-radius:8px;
+            max-width:calc(100% - 24px);
+        }
+
+        /* keep hover behaviour working (hover will still scale image / overlay) */
+        .work:hover .caption{ opacity:1; transform:translateY(0); }
 
         /* hover state */
         .work:hover{
